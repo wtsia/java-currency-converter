@@ -17,8 +17,9 @@ run `javadoc <filename>.java` in a terminal or use the Eclipse `'Project' >> 'Ge
 
 ## Program tree:
 constant variables (defaults): USD to RMB conversion as 1 to 7.05
-- unitUsdToRmb: 
-- unitRmbToUsd: 
+- `unitUsdToRmb = 7.05;`: 1 USD is equal to 7.05 RMB  
+- `unitRmbToUsd = 0.14;`: 1 RMB is equal to 0.14 USD
+
 user: interacts through the `menu` and `main`
 
 `menu`: 
