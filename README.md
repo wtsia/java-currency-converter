@@ -4,7 +4,7 @@ program that converts currency from United States Dollar (USD) to Renminbu (RMB)
 - use multiple values to test
 
 ## creating Javadocs
-run `javadoc <filename>.java` in a terminal or use the Eclipse which will generate static assets, as well as javascript files that present the program in standard Java documentation format.
+run `javadoc <filename>.java` in a terminal or use the Eclipse `'Project' >> 'Generate Javadoc'`  which will generate static assets, as well as javascript files that present the program in standard Java documentation format.
 - in this program, it will be done by opening a terminal and typing `javadoc Conversion.java`
 ```
 /**
