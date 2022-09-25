@@ -71,6 +71,7 @@ class Conversion {
 		int conversionType = presentMenu();
 		double conversionResult = 0; //set default value to 0
 		double currencyInput = 0; //set default value to 0
+		String currencyType = "";
 		
 		if (conversionType == 3) {
 			System.out.println("Exiting the tool... goodbye!");
@@ -80,28 +81,24 @@ class Conversion {
 			
 			// take input of USD and convert to RMB
 			System.out.println("Type the value of currency to be input.");
-			System.out.print("Your answer (RMB): ");
+			System.out.print("Your answer (USD): ");
 			currencyInput = currencyAmount.nextDouble();
 			conversionResult = convertUsdToRmb(currencyInput);
-			
-			System.out.printf("Your converted currency is %.1f RMB\n", conversionResult);
-			System.out.println("Have a nice Day!");
-			System.exit(0);
+			currencyType = "RMB";
 		} if (conversionType == 2) {
 			System.out.println(conversionType + " you have chosen RMB to USD");
 			
 			// take input of RMB and convert to USD
 			System.out.println("Type the value of currency to be input.");
-			System.out.printf("Your answer (USD): ");
+			System.out.printf("Your answer (RMB): ");
 			currencyInput = currencyAmount.nextDouble();
 			conversionResult = convertRmbToUsd(currencyInput);
-			
-			System.out.printf("Your converted currency is %.1f USD\n", conversionResult);
-			System.out.println("Have a nice Day!");
-			System.exit(0);
-		} else {
-			System.out.println("Error");
+			currencyType = "USD";
 		}
+		
+		System.out.printf("Your converted currency is %.1f %s\n", conversionResult, currencyType);
+		System.out.println("Have a nice Day!");
+		System.exit(0);
 	}
 }
 
