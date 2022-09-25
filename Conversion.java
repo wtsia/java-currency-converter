@@ -35,7 +35,7 @@ class Conversion {
 		System.out.println("*            CURRENCY CONVERSION TOOL              *");
 		System.out.println("*                                                  *");
 		System.out.println("*                    AUTHORS:                      *");
-		System.out.println("*             Higino L.P., Winston T.              *");
+		System.out.println("*            Higinio L.P., Winston T.              *");
 		System.out.println("* https://github.com/wtsia/java-currency-converter *");
 		System.out.println("*                                                  *");
 		System.out.println("*             Choose Conversion Type:              *");
@@ -66,30 +66,37 @@ class Conversion {
 	 *
 	 */
 	public static void main(String[] args) {
+		Scanner currencyAmount = new Scanner(System.in);
+		
 		int conversionType = presentMenu();
 		double conversionResult = 0; //set default value to 0
+		double currencyInput = 0; //set default value to 0
 		
 		if (conversionType == 3) {
 			System.out.println("Exiting the tool... goodbye!");
 			System.exit(0);
 		} if (conversionType == 1) {
-			System.out.println(conversionType + " is the chosen type");
+			System.out.println(conversionType + " you have chosen USD to RMB");
 			
-			// take input of use in currency
+			// take input of USD and convert to RMB
+			System.out.println("Type the value of currency to be input.");
+			System.out.print("Your answer (RMB): ");
+			currencyInput = currencyAmount.nextDouble();
+			conversionResult = convertUsdToRmb(currencyInput);
 			
-			// conversionResult = convertUsdToRmb();
-			
-			System.out.println("Your converted currency is " + conversionResult + "RMB");
+			System.out.printf("Your converted currency is %.1f RMB\n", conversionResult);
 			System.out.println("Have a nice Day!");
 			System.exit(0);
 		} if (conversionType == 2) {
-			System.out.println(conversionType + " is the chosen type");
+			System.out.println(conversionType + " you have chosen RMB to USD");
 			
-			// take input of use in currency
+			// take input of RMB and convert to USD
+			System.out.println("Type the value of currency to be input.");
+			System.out.printf("Your answer (USD): ");
+			currencyInput = currencyAmount.nextDouble();
+			conversionResult = convertRmbToUsd(currencyInput);
 			
-			// conversionResult = convertRmbToUsd();
-			
-			System.out.println("Your converted currency is " + conversionResult + "USD");
+			System.out.printf("Your converted currency is %.1f USD\n", conversionResult);
 			System.out.println("Have a nice Day!");
 			System.exit(0);
 		} else {
