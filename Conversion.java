@@ -1,12 +1,19 @@
 import java.util.Scanner;
 
 class Conversion {
-	// constants for default conversion
+	/**
+	 * constants for default conversion:
+	 * @parameters unitUsdToRmb
+	 * @parameter unitRmbToUsd
+	 */
 	public static double unitUsdToRmb = 7.05;
 	public static double unitRmbToUsd = 0.14;
+	
 	/**
 	 * Method to convert USD to RMB
 	 * Takes in an input and returns the unit conversion of USD to ROMB
+	 * @parameters input as a double
+	 * @return input*unitUsdToRmb
 	 */
 	public static double convertUsdToRmb (double input) {
 		return input*unitUsdToRmb;
@@ -15,7 +22,7 @@ class Conversion {
 	/**
 	 * presentMenu method 
 	 * presents menu of options to the user and returns the options chosen by the user
-	 * returns the value to main
+	 * @return conversionType as input value
 	 */
 	public static int presentMenu() {
 		Scanner in = new Scanner(System.in);
@@ -38,7 +45,8 @@ class Conversion {
 		//
 		
 		int conversionType = in.nextInt();
-		System.out.println(conversionType);
+		// Print out for testing
+		// System.out.println(conversionType);
 		return conversionType;
 	}
 	
@@ -62,7 +70,10 @@ class Conversion {
 //		System.out.println("2.Convert RMB to USD");
 //		System.out.println("3.Exit");
 		
-		presentMenu();
+		if (presentMenu() == 3) {
+			System.out.println("goodbye!");
+			System.exit(0);
+		};
 //		Scanner menuInput = new Scanner(System.in);
 //		
 //		System.out.println("Please input an option number");
