@@ -1,31 +1,35 @@
 import java.util.Scanner;
 
-class Conversion {
+public class Conversion {
 	/**
-	 * constants for default conversion:
-	 * @parameters unitUsdToRmb
-	 * @parameter unitRmbToUsd
+	 * Class converts currency from USD to RMB and vice versa
+	 * @author Higinio L.P., Winston T.
 	 */
 	public static double unitUsdToRmb = 7.05;
 	public static double unitRmbToUsd = 0.14;
 	
 	/**
 	 * Method to convert USD to RMB
-	 * Takes in an input and returns the unit conversion of USD to ROMB
-	 * @parameters double input
-	 * @return input*unitUsdToRmb
+	 * @param USD input as a double
+	 * @return USD converted to RMB
 	 */
 	public static double convertUsdToRmb (double input) {
 		return input*unitUsdToRmb;
 	}
+	
+	/**
+	 * Method to convert RMB to USD
+	 * @param RMB input as a double
+	 * @return RMB converted to USD
+	 */
 	public static double convertRmbToUsd (double input) {
 		return input*unitRmbToUsd;
 	}
 	
 	/**
 	 * presentMenu method 
-	 * presents menu of options to the user and returns the options chosen by the user
-	 * @return conversionType as input value
+	 * prints menu of options to the user and returns the options chosen by the user
+	 * @return userInput
 	 */
 	public static int presentMenu() {
 		int userInput;
@@ -53,17 +57,13 @@ class Conversion {
 			System.out.print("Your answer:");
 			userInput = in.nextInt();
 		}
-		// int conversionType = in.nextInt();
-		// Print out for testing
-		// System.out.println(conversionType);
 		return userInput;
 	};
 	
 	/**
 	 * Main method class
-	 * @parameters
-	 * @return
-	 *
+	 * @param args
+	 * @return conversionResult, and converted currency
 	 */
 	public static void main(String[] args) {
 		Scanner currencyAmount = new Scanner(System.in);
@@ -97,7 +97,7 @@ class Conversion {
 		}
 		
 		System.out.printf("Your converted currency is %.1f %s\n", conversionResult, currencyType);
-		System.out.println("Have a nice Day!");
+		System.out.println("Have a nice day!");
 		System.exit(0);
 	}
 }
