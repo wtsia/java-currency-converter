@@ -60,12 +60,33 @@ class Conversion {
 	 */
 	public static void main(String[] args) {
 		int conversionType = presentMenu();
+		double conversionResult = 0; //set default value to 0
 		
 		if (conversionType == 3) {
 			System.out.println("Exiting the tool... goodbye!");
 			System.exit(0);
-		} else {
+		} if (conversionType == 1) {
 			System.out.println(conversionType + " is the chosen type");
+			
+			// take input of use in currency
+			
+			// conversionResult = convertUsdToRmb();
+			
+			System.out.println("Your converted currency is " + conversionResult + "RMB");
+			System.out.println("Have a nice Day!");
+			System.exit(0);
+		} if (conversionType == 2) {
+			System.out.println(conversionType + " is the chosen type");
+			
+			// take input of use in currency
+			
+			// conversionResult = convertRmbToUsd();
+			
+			System.out.println("Your converted currency is " + conversionResult + "USD");
+			System.out.println("Have a nice Day!");
+			System.exit(0);
+		} else {
+			System.out.println("Not a valid choice!");
 		}
 	}
 }
