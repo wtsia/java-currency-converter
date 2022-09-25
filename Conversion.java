@@ -28,6 +28,7 @@ class Conversion {
 	 * @return conversionType as input value
 	 */
 	public static int presentMenu() {
+		int userInput;
 		Scanner in = new Scanner(System.in);
 		
 		System.out.println("****************************************************");
@@ -46,10 +47,16 @@ class Conversion {
 		System.out.println("****************************************************\n");
 		
 		System.out.print("Your answer:");
+		userInput = in.nextInt();
+		while ((userInput > 3) | (userInput < 1)) {
+			System.out.println("Please enter a number corresponding to a relevant option (1-3)");
+			System.out.print("Your answer:");
+			userInput = in.nextInt();
+		}
 		// int conversionType = in.nextInt();
 		// Print out for testing
 		// System.out.println(conversionType);
-		return in.nextInt();
+		return userInput;
 	};
 	
 	/**
@@ -86,7 +93,7 @@ class Conversion {
 			System.out.println("Have a nice Day!");
 			System.exit(0);
 		} else {
-			System.out.println("Not a valid choice!");
+			System.out.println("Error");
 		}
 	}
 }
