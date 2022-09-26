@@ -1,7 +1,6 @@
 # java-currency-converter
 ### Author: Higinio L.P., Winston T.
-program that converts currency from United States Dollar (USD) to Renminbu (RMB), and vice versa
-- use multiple values to test
+program that converts currency from United States Dollar (USD) to Renminbi (RMB), and vice versa
 
 ## creating Javadocs
 run `javadoc <filename>.java` in a terminal or use the Eclipse `'Project' >> 'Generate Javadoc'`  which will generate static assets, as well as javascript files that present the program in standard Java documentation format.
@@ -15,7 +14,7 @@ run `javadoc <filename>.java` in a terminal or use the Eclipse `'Project' >> 'Ge
 */
 ```
 
-## Program tree:
+## Program Methods/Design:
 constant variables (defaults): USD to RMB conversion as 1 to 7.05
 - `unitUsdToRmb = 7.05;`: 1 USD is equal to 7.05 RMB  
 - `unitRmbToUsd = 0.14;`: 1 RMB is equal to 0.14 USD
