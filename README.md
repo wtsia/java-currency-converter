@@ -1,5 +1,5 @@
 # java-currency-converter
-### Author: Higino L.P., Winston T.
+### Author: Higinio L.P., Winston T.
 program that converts currency from United States Dollar (USD) to Renminbu (RMB), and vice versa
 - use multiple values to test
 
@@ -22,7 +22,7 @@ constant variables (defaults): USD to RMB conversion as 1 to 7.05
 
 user: interacts through the `menu` and `main`
 
-`menu`: 
+`presentMenu`: 
 - presents menu of options to the user and returns the options chosen by the user
 - returns the value to main
 
@@ -34,10 +34,10 @@ user: interacts through the `menu` and `main`
 - formats in 1 decimal digit
 - uses switch statement
 
-`currency method`: 
+`convertUsdToRmb`: 
 - receives `double` parameter containing value of RMB and returns its equivalent in USD
 
-`currency method`: 
+`convertRmbToUsd`: 
 - receives `double` parameter containing value of USD and returns its equivalent in RMB
 
 
