@@ -73,32 +73,37 @@ public class Conversion {
 		double currencyInput = 0; //set default value to 0
 		String currencyType = "";
 		
-		if (conversionType == 3) {
-			System.out.println("Exiting the tool... goodbye!");
-			System.exit(0);
-		} if (conversionType == 1) {
-			System.out.println(conversionType + " you have chosen USD to RMB");
-			
-			// take input of USD and convert to RMB
-			System.out.println("Type the value of currency to be input.");
-			System.out.print("Your answer (USD): ");
-			currencyInput = currencyAmount.nextDouble();
-			conversionResult = convertUsdToRmb(currencyInput);
-			currencyType = "RMB";
-		} if (conversionType == 2) {
-			System.out.println(conversionType + " you have chosen RMB to USD");
-			
-			// take input of RMB and convert to USD
-			System.out.println("Type the value of currency to be input.");
-			System.out.printf("Your answer (RMB): ");
-			currencyInput = currencyAmount.nextDouble();
-			conversionResult = convertRmbToUsd(currencyInput);
-			currencyType = "USD";
-		}
+		switch (conversionType) {
+			case 1: // USD to RMB
+				System.out.println("You have chosen 1. USD to RMB");
+				
+				// take input of USD and convert to RMB
+				System.out.println("Type the value of currency to be input.");
+				System.out.print("Your answer (USD): ");
+				currencyInput = currencyAmount.nextDouble();
+				conversionResult = convertUsdToRmb(currencyInput);
+				currencyType = "RMB";
+				break;
+			case 2: // RMB to USD
+				System.out.println("You have chosen 2. RMB to USD");
+				
+				// take input of RMB and convert to USD
+				System.out.println("Type the value of currency to be input.");
+				System.out.printf("Your answer (RMB): ");
+				currencyInput = currencyAmount.nextDouble();
+				conversionResult = convertRmbToUsd(currencyInput);
+				currencyType = "USD";
+				break;
+			case 3: // 
+				System.out.println("Exiting the tool... goodbye!");
+				System.exit(0);
+		};
+		
 		
 		System.out.printf("Your converted currency is %.1f %s\n", conversionResult, currencyType);
 		System.out.println("Have a nice day!");
 		System.exit(0);
-	}
-}
+	};
+};
+
 
