@@ -1,16 +1,16 @@
 import java.util.Scanner;
 
+/**
+ * Class converts currency from USD to RMB and vice versa
+ * @author Higinio L.P., Winston T.
+ */
 public class Conversion {
-	/**
-	 * Class converts currency from USD to RMB and vice versa
-	 * @author Higinio L.P., Winston T.
-	 */
 	public static double unitUsdToRmb = 7.05;
 	public static double unitRmbToUsd = 0.14;
 	
 	/**
 	 * Method to convert USD to RMB
-	 * @param USD input as a double
+	 * @param input in USD as a double
 	 * @return USD converted to RMB
 	 */
 	public static double convertUsdToRmb (double input) {
@@ -19,7 +19,7 @@ public class Conversion {
 	
 	/**
 	 * Method to convert RMB to USD
-	 * @param RMB input as a double
+	 * @param input as RMB as a double
 	 * @return RMB converted to USD
 	 */
 	public static double convertRmbToUsd (double input) {
@@ -29,6 +29,7 @@ public class Conversion {
 	/**
 	 * presentMenu method 
 	 * prints menu of options to the user and returns the options chosen by the user
+	 * @param 'in' scanner object is used to store user input 
 	 * @return userInput
 	 */
 	public static int presentMenu() {
@@ -62,44 +63,41 @@ public class Conversion {
 	
 	/**
 	 * Main method class
-	 * @param args
-	 * @return conversionResult, and converted currency
+	 * @param currencyAmount is a scanner object 
+	 * @param currencyInput is the intermediary variable to store the currency value input 
+	 * @param conversionResult stores the result of calling the convertUsdToRmb method for currencyInput
+	 * @param conversionType stores the chosen conversion scheme
+	 * @return conversionResult
+	 * 
 	 */
 	public static void main(String[] args) {
 		Scanner currencyAmount = new Scanner(System.in);
-		
 		int conversionType = presentMenu();
-		double conversionResult = 0; //set default value to 0
-		double currencyInput = 0; //set default value to 0
+		double conversionResult = 0; //
+		double currencyInput = 0; //
 		String currencyType = "";
 		
 		switch (conversionType) {
-			case 1: // USD to RMB
+			case 1:
 				System.out.println("You have chosen 1. USD to RMB");
-				
-				// take input of USD and convert to RMB
 				System.out.println("Type the value of currency to be input.");
 				System.out.print("Your answer (USD): ");
 				currencyInput = currencyAmount.nextDouble();
 				conversionResult = convertUsdToRmb(currencyInput);
 				currencyType = "RMB";
 				break;
-			case 2: // RMB to USD
+			case 2:
 				System.out.println("You have chosen 2. RMB to USD");
-				
-				// take input of RMB and convert to USD
 				System.out.println("Type the value of currency to be input.");
 				System.out.printf("Your answer (RMB): ");
 				currencyInput = currencyAmount.nextDouble();
 				conversionResult = convertRmbToUsd(currencyInput);
 				currencyType = "USD";
 				break;
-			case 3: // 
+			case 3:
 				System.out.println("Exiting the tool... goodbye!");
 				System.exit(0);
 		};
-		
-		
 		System.out.printf("Your converted currency is %.1f %s\n", conversionResult, currencyType);
 		System.out.println("Have a nice day!");
 		System.exit(0);
